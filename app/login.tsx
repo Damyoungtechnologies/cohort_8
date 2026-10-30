@@ -1,8 +1,8 @@
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Text, View } from "react-native";
+import { Text, View, Pressable } from "react-native";
 import { myStyle } from "@/styles/main";
 import { SpecialInput } from "@/components/ui/special-input";
-import { Button } from "@react-navigation/elements";
+// removed @react-navigation/elements import for SDK 56+ compatibility
 import { useRouter } from "expo-router";
 // import { useState } from "react";
 import { useLogin } from "@/store/loginStore";
@@ -116,13 +116,12 @@ export default function Login() {
             // onChangeText={(text) => setPassword(text)}
             onChangeText={(text) => updatePassword(text)}
           />
-          <Button
+          <Pressable
             onPressIn={handleLogin}
-            color="#d604df"
             style={myStyle.button}
           >
-            Login
-          </Button>
+            <Text>Login</Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </SafeAreaProvider>

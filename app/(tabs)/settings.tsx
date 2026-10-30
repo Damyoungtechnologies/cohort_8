@@ -1,8 +1,8 @@
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { Text, View } from "react-native";
+import { Text, View, Pressable } from "react-native";
 import { myStyle } from "@/styles/main";
 import { SpecialInput } from "@/components/ui/special-input";
-import { Button } from "@react-navigation/elements";
+// removed react-navigation/elements import for SDK 56+ compatibility
 export default function Register() {
   return (
     <SafeAreaProvider>
@@ -24,7 +24,9 @@ export default function Register() {
         <Text style={myStyle.text}>This is Settings</Text>
         <Text style={myStyle.text}>This is Settings</Text>
 
-        <Button style={myStyle.button}>click me</Button>
+        <Pressable style={myStyle.button}>
+          <Text>click me</Text>
+        </Pressable>
       </SafeAreaView>
     </SafeAreaProvider>
   );
